@@ -1,18 +1,35 @@
-import sys
-import time
-
-wepon_status = 0 # 0 = no wepon
-user_gender = int(input('\nEnter your Gender 0 for male 1 for female: '))
-
-if user_gender == 1:
-    exec(open('dead.py').read())
-
-elif user_gender == 0:
-    print('\nWelcome to -tbd-')
-else:
-    print('\nTry again')
-    time.sleep(2)
-    exec(open('main.py').read())
+import first_choice
 
 
-exec(open('first_choice.py').read())
+def start_menu():
+    while True:
+        print("Type 'help' for help or 'exit' for exit.")
+        print('\nWelcome to the adventure!')
+        # decision = input('\nEnter your Gender - 0 for male, 1 for female: ').lower()
+        #
+        # options = {
+        #     "exit": sys.exit,
+        #     "help": help_menu
+        # }
+        # if decision in options:
+        #     options[decision]()
+        # else:
+        #     print('\nWelcome to the adventure!')
+        # elif user_gender in {"0", "1"}:
+        #     print('\nWelcome to the adventure!')
+        # else:
+        #     print('\nTry again')
+        #     time.sleep(2)
+        #     continue
+
+        first_choice.action()
+
+
+def help_menu():
+    print("Help Menu:\n"
+          "exit\t\tExit the Game\n"
+          "help\t\tBrings up the Help Menu")
+
+
+if __name__ == "__main__":
+    start_menu()
